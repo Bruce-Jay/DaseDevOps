@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome(service=Service(path))    #path为ChromeDriver本地路径
+driver = webdriver.Chrome(service=Service("../../../chromedriver.exe"))    #path为ChromeDriver本地路径
 driver.get("http://localhost:8082/")
 driver.find_element(By.XPATH,'//*[@id="app"]/div/div/div/div/div[2]/label[1]').send_keys('admin')    #输入账号
 driver.find_element(By.XPATH,'//*[@id="app"]/div/div/div/div/div[2]/label[2]').send_keys('123456789')    #输入密码

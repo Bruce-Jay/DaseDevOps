@@ -1,0 +1,59 @@
+stages: 
+  - build
+  - test
+  - deploy
+
+include: #导入静态扫描依赖
+  - template: Security/SAST.gitlab-ci.yml
+
+build-job:
+  image: ccchieh/maven3-openjdk-8-cn
+  stage: build
+  tags: 
+    - devops-demo-another-runner
+  script:
+    - |
+      export MAVEN_CONFIG=$(pwd)/.m2
+      /usr/local/bin/mvn-entrypoint.sh mvn package
+      docker build --build-arg MODULE_NAME=gateway -t 
+$IMAGE_GATEAWY_MAIN .
+      docker push $IMAGE_GATEAWY_MAIN
+      docker build --build-arg MODULE_NAME=hello -t 
+$IMAGE_HELLO_MAIN .
+      docker push $IMAGE_HELLO_MAIN
+      docker build --build-arg MODULE_NAME=login -t 
+$IMAGE_LOGIN_MAIN .
+      docker push $IMAGE_LOGIN_MAIN
+      docker build --build-arg MODULE_NAME=provider_one -t 
+$IMAGE_PROVIDERONE_MAIN .
+      docker push $IMAGE_PROVIDERONE_MAIN
+      docker build --build-arg MODULE_NAME=provider_two -t 
+$IMAGE_PROVIDERTWO_MAIN .
+      docker push $IMAGE_PROVIDERTWO_MAIN
+      docker build --build-arg MODULE_NAME=provider_three -t 
+$IMAGE_PROVIDERTHREE_MAIN .
+      docker push $IMAGE_PROVIDERTHREE_MAIN
+  artifacts: 
+    paths: 
+      - target/
+ 
+spotbugs-sast-job:
+  stage: test
+  dependencies:
+    - build-job
+  tags:
+    - devops-demo-another-runner
+  variables:
+    COMPILE: "false"
+
+deploy-job:
+  stage: deploy
+  tags: 
+    - devops-demo-another-runner
+  script:
+    - |
+      ssh $SERVER_ADDR cat $SERVER_PATH/docker-compose.yml
+      ssh $SERVER_ADDR docker-compose -f $SERVER_PATH/docker-compose.yml up -d
+      ssh $SERVER_ADDR docker-compose -f $SERVER_PATH/docker-compose.yml stop
+      ssh $SERVER_ADDR docker-compose -f $SERVER_PATH/docker-compose.yml pull
+      ssh $SERVER_ADDR docker-compose -f $SERVER_PATH/docker-compose.yml up -d --build

@@ -5,9 +5,9 @@ import unittest
 import time
 from BSTestRunner import BSTestRunner
 
-driver = webdriver.Chrome(service=Service(path))    #path为ChromeDriver本地路径
+driver = webdriver.Chrome(service=Service("../../../chromedriver.exe"))    #path为ChromeDriver本地路径
 class LoginCase(unittest.TestCase):
-    def login(self):
+    def test_login(self):
         driver.get("http://localhost:8082/")
         driver.find_element(By.XPATH,'//*[@id="app"]/div/div/div/div/div[2]/label[1]').send_keys('admin')   #输入账号
         driver.find_element(By.XPATH,'//*[@id="app"]/div/div/div/div/div[2]/label[2]').send_keys('123456789')   #输入密码
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     date=time.strftime("%Y%m%d")
     time_=time.strftime("%Y%m%d%H%M%S")
     testsuite = unittest.TestSuite()
-    testsuite.addTest(LoginCase("login"))
+    testsuite.addTest(LoginCase("test_login"))
     with open('report.html', 'wb') as report:
         runner = BSTestRunner(stream=report, title=report_title, description=desc)
         runner.run(testsuite)

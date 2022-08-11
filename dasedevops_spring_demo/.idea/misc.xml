@@ -9,14 +9,13 @@
         <option value="$PROJECT_DIR$/provider_one/pom.xml" />
         <option value="$PROJECT_DIR$/provider_two/pom.xml" />
         <option value="$PROJECT_DIR$/provider_three/pom.xml" />
-        <option value="$PROJECT_DIR$/hello/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/login/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>
