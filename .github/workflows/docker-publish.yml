@@ -41,7 +41,8 @@ jobs:
           password: "${{ secrets.ACR_PASSWORD }}"
       - name: Build and push image
         run: |
-          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_1:latest ./$MODULE_1
+          ls
+          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_1:latest ./dasedevops_spring_demo/$MODULE_1
           docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_1:latest
 
           docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_2:latest ./$MODULE_2
