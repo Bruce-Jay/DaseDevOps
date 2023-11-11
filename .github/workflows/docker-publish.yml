@@ -45,20 +45,20 @@ jobs:
           docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_1:latest ./dasedevops_spring_demo/$MODULE_1
           docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_1:latest
 
-          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_2:latest ./dasedevops_spring_demo/$MODULE_2
-          docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_2:latest
+          docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_2:latest ./dasedevops_spring_demo/$MODULE_2
+          docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_2:latest
 
-          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_3:latest ./dasedevops_spring_demo/$MODULE_3
-          docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_3:latest
+          docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_3:latest ./dasedevops_spring_demo/$MODULE_3
+          docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_3:latest
 
-          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_4:latest ./dasedevops_spring_demo/$MODULE_4
-          docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_4:latest
+          docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_4:latest ./dasedevops_spring_demo/$MODULE_4
+          docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_4:latest
 
-          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_5:latest ./dasedevops_spring_demo/$MODULE_5
-          docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_5:latest
+          docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_5:latest ./dasedevops_spring_demo/$MODULE_5
+          docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_5:latest
 
-          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_6:latest ./dasedevops_spring_demo/$MODULE_6
-          docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_6:latest
+          docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_6:latest ./dasedevops_spring_demo/$MODULE_6
+          docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_6:latest
 
       - name: Copy single file to remote
         uses: garygrossgarten/github-action-scp@release
