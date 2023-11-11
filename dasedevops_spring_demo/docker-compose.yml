@@ -2,31 +2,31 @@ version: "3"
 
 services:
   providerOne:
-    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/provider_one:latest
+    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/provider_one:latest
     ports:
       - "8666:8666"
 
   gateway:
-    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/gateway:latest
+    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/gateway:latest
     ports:
       - "8080:8080"
 
   login:
-    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/login:latest
+    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/login:latest
     ports:
       - "8000:8000"
 
   hello:
-    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/hello:latest
+    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/hello:latest
     ports:
       - "8001:8001"
 
   providerTwo:
-    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/provider_two:latest
+    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/provider_two:latest
     ports:
       - "8667:8667"
 
   providerThree:
-    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/provider_three:latest
+    image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/provider_three:latest
     ports:
       - "8668:8668"

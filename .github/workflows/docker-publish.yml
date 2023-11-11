@@ -42,8 +42,8 @@ jobs:
       - name: Build and push image
         run: |
           ls
-          docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_1:latest ./dasedevops_spring_demo/$MODULE_1
-          docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_1:latest
+          docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_1:latest ./dasedevops_spring_demo/$MODULE_1
+          docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_1:latest
 
           docker build -t ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_2:latest ./dasedevops_spring_demo/$MODULE_2
           docker push ${{ secrets.ALI_NAMESPACE_URL }}/$MODULE_2:latest
