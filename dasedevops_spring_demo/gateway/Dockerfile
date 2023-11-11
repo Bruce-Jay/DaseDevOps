@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM java:8
 MAINTAINER ningzhicheng
 VOLUME /tmp
 ADD ./target/*.jar /gateway.jar
