@@ -6,12 +6,10 @@ services:
     ports:
       - "8666:8666"
 
-
   gateway:
     image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/gateway:latest
     ports:
       - "8080:8080"
-
 
   login:
     image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/login:latest

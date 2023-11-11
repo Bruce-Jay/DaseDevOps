@@ -1,11 +1,6 @@
 FROM java:8
-
 MAINTAINER ningzhicheng
-
 VOLUME /tmp
-
 ADD ./target/*.jar /provider_two.jar
-
 ENTRYPOINT ["java","-jar","/provider_two.jar"]
-
 EXPOSE 8667

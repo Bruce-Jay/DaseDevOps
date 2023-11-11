@@ -1,11 +1,6 @@
-FROM java:8
-
+FROM openjdk:8
 MAINTAINER ningzhicheng
-
 VOLUME /tmp
-
 ADD ./target/*.jar /gateway.jar
-
 ENTRYPOINT ["java","-jar","/gateway.jar"]
-
 EXPOSE 8080
