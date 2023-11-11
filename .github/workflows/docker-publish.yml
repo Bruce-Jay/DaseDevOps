@@ -88,3 +88,4 @@ jobs:
             docker-compose -f scp/devops_demo/docker-compose.yml pull
             docker-compose -f scp/devops_demo/docker-compose.yml up -d
             docker image prune -f
+            
