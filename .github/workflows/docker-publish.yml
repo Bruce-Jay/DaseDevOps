@@ -42,6 +42,8 @@ jobs:
       - name: Build and push image
         run: |
           ls
+          docker login --username=tb1020550141 registry.cn-shanghai.aliyuncs.com
+          as61407822
           docker build -t registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_1:latest ./dasedevops_spring_demo/$MODULE_1
           docker push registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/$MODULE_1:latest
 
@@ -88,4 +90,4 @@ jobs:
             docker-compose -f scp/devops_demo/docker-compose.yml pull
             docker-compose -f scp/devops_demo/docker-compose.yml up -d
             docker image prune -f
-            
+
