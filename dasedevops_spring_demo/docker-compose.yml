@@ -30,3 +30,4 @@ services:
     image: registry.cn-shanghai.aliyuncs.com/easonlin-devops-practice/action/provider_three:latest
     ports:
       - "8668:8668"
+      
